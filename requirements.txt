@@ -1,0 +1,27 @@
+# Pinned so everyone reproduces the same results and avoids the
+# scikit-learn / diffprivlib version mismatch we hit before:
+#
+#   ImportError: cannot import name 'DOUBLE' from 'sklearn.tree._tree'
+#
+# diffprivlib 0.6.6 imports private scikit-learn internals
+# (sklearn.tree._tree.DOUBLE/DTYPE/NODE_DTYPE) that newer scikit-learn
+# releases (1.8+, whatever pip installs by default on a fresh Python 3.12+
+# environment) have removed. scikit-learn==1.7.2 is the newest version
+# confirmed to still work with diffprivlib==0.6.6. Do NOT bump
+# scikit-learn without re-testing that internal_perturbation_save_results
+# (functions.ipynb) still imports and runs.
+#
+# Requires Python 3.11 (see .python-version). Python 3.14 is too new -
+# prebuilt wheels for this stack aren't reliably available for it yet.
+
+numpy==2.2.6
+pandas==2.3.3
+scipy==1.15.3
+scikit-learn==1.7.2
+matplotlib==3.10.8
+seaborn==0.13.2
+joblib==1.5.3
+openpyxl==3.1.5
+diffprivlib==0.6.6
+import-ipynb==0.2
+ipykernel>=6.25
