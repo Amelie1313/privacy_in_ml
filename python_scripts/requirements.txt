@@ -1,0 +1,14 @@
+# Requires Python 3.11. Newer Python versions (3.12+, especially 3.14) can
+# resolve to a scikit-learn build incompatible with diffprivlib, 
+# causing an error like :cannot import name 'DOUBLE' from 'sklearn.tree._tree'.
+
+numpy==2.2.6
+pandas==2.3.3
+scipy==1.15.3
+scikit-learn==1.7.2
+matplotlib==3.10.8
+seaborn==0.13.2
+joblib==1.5.3
+openpyxl==3.1.5
+diffprivlib==0.6.6
+imbalanced-learn==0.14.2

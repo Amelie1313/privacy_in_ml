@@ -25,3 +25,4 @@ openpyxl==3.1.5
 diffprivlib==0.6.6
 import-ipynb==0.2
 ipykernel>=6.25
+imbalanced-learn==0.14.2
