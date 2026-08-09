@@ -237,8 +237,6 @@ def run_membership_attack(
         if confidence_scores is None:
             continue
 
-        # orig_confidence_scores.pkl is a single array (no epsilon axis) -
-        # wrap it so it fits the same {key: scores} shape as the others.
         if not isinstance(confidence_scores, dict):
             confidence_scores = {"Original": confidence_scores}
 
