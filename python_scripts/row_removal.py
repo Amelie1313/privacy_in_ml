@@ -1,20 +1,3 @@
-"""
-Port of `<dataset>_row_removal.ipynb`.
-
-Empirically probes the "neighboring datasets" definition differential
-privacy is built on: D and D' differ by exactly one row. For each
-perturbation type (Input, Output, Internal), `n_iter` times: remove one
-random row from the training data, then run the *same* perturbation
-mechanics as perturbations.py across all epsilon values on that reduced
-dataset. Also runs one baseline row (full data, no removal, no perturbation).
-
-The same n_iter removed rows are reused across Input/Output/Internal (a
-dedicated RNG for row selection is reset before each section) so the three
-mechanisms can be compared on identical D' datasets. No aggregate comparison
-is computed here - just raw per-iteration/per-epsilon results saved to file,
-same as the notebooks.
-"""
-
 import copy
 
 import numpy as np
