@@ -1,7 +1,8 @@
 # privacy_in_ml — python_scripts
 
-Self-contained Python port of the project's Jupyter notebooks: differentially
-private (Input / Output / Internal / objective perturbation) logistic
+Self-contained Python:
+
+Differentially private (Input / Output / Internal / objective perturbation) logistic
 regression, a row-removal experiment evaluation, and a membership-inference
 attack, for three datasets (Pima Diabetes, Dry Bean, Credit Card default).
 
@@ -33,7 +34,10 @@ python main.py --dataset diabetes
 ```
 
 With no other flags it fits the plain (non-private) baseline model, runs Input, Output and Internal perturbation across that dataset's standard epsilon grid, and then
-runs the membership-inference attack against the resulting confidence scores.
+runs the membership-inference attack against the resulting confidence scores. 
+
+Since we provide the processed datasets the preprocessing is only run when it is expllicitly called.
+
 Results are written to `../results/model_results_<dataset>.xlsx`; confidence
 score pickles (consumed by the membership attack) are written alongside them.
 
